@@ -22,6 +22,7 @@ public class MainController {
         return "index";
     }
 
+
     @GetMapping("/addPet")
     public String addPet(Pet pet){
         return "addPet";
@@ -31,7 +32,19 @@ public class MainController {
     public String addPetPost(@Valid Pet pet, BindingResult result, Model model) {
         petService.savePet(pet);
         model.addAttribute("pets", petService.findAllPet());
-        return "index";
+        Iterable<Pet> cos = petService.findAllPet();
+        return "listPage";
     }
+
+
+
+
+    @GetMapping("/petList")
+    public String goToPetList(@Valid Pet pet, BindingResult result, Model model){
+        model.addAttribute("pets", petService.findAllPet());
+        return "listPage";
+    }
+
+
 }
 

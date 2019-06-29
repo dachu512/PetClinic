@@ -2,29 +2,37 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Pet Clinic</title>
 </head>
 <body>
- <h1>Welcome to the clinic</h1>
- <div th:switch="${pet}">
-     <h2 th:case="null">No pet yet!</h2>
-     <div th:case="*">
-         <h2>Pets</h2>
-         <table>
-             <thead>
-             <tr>
-                 <th>Name</th>
-                 <th>Species</th>
-             </tr>
-             </thead>
-             <tbody>
-             <tr th:each="pet : ${pets}">
-                 <td th:text="${pet.name}"></td>
-                 <td th:text="${pet.species}"></td>
-             </tr>
-             </tbody>
-         </table>
-     </div>
- </div>
+
+<div th:insert="header.html :: header"></div>
+<br>
+<div class="container">
+    <div class="row">
+        <img src="static.images/banner.jpg" alt="">
+    </div>
+</div>
+<div class="container">
+<div class="row">
+    <div class="col-sm-6">
+        <div class="jumbotron">
+                <h1>What is Lorem Ipsum?</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
+    <div class="col-sm-6 d-flex align-items-center">
+        <div class="row">
+                <a class="btn btn-lg btn-primary" th:href="@{'/addPet'}" role="button">Add new pet</a>
+                <a class="btn btn-lg btn-primary" th:href="@{'/petList'}" role="button">Show list of pets</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+ <div th:insert="footer.html :: footer"></div>
 </body>
 </html>
