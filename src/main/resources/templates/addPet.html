@@ -1,9 +1,36 @@
-<form action="#" th:action="@{/addPet}" th:object="${pet}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
-    <label for="name">Name</label>
-    <input type="text" th:field="*{name}" id="name" placeholder="Name">
-    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
-    <label for="name">Species</label>
-    <input type="text" th:field="*{species}" id="species" placeholder="Species">
-    <span th:if="${#fields.hasErrors('species')}" th:errors="*{species}"></span>
-    <input type="submit" value="Add Pet">
-</form>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Pet Clinic</title>
+</head>
+<body>
+
+<div th:insert="header.html :: header"></div>
+<br>
+<div class="container">
+    <h1>Add new pet</h1>
+    <form action="#" th:action="@{/addPet}" th:object="${pet}" method="post"
+          xmlns:th="http://www.w3.org/1999/xhtml">
+        <div class="row">
+            <label for="name">Name </label>
+            <input type="text" th:field="*{name}" id="name" placeholder="Name">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </div>
+        <br>
+        <div class="row">
+            <label for="name">Species </label>
+            <input type="text" th:field="*{species}" id="species" placeholder="Species">
+            <span th:if="${#fields.hasErrors('species')}" th:errors="*{species}"></span>
+        </div>
+
+        <input type="submit" value="Add Pet">
+    </form>
+</div>
+
+
+<div th:insert="footer.html :: footer"></div>
+</body>
+</html>
