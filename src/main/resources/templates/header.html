@@ -1,6 +1,6 @@
-<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-        <img src="static.images\logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="images\logo.png" width="30" height="30" class="d-inline-block align-top" style="padding-right: 5;" alt="">
         <a class="navbar-brand" th:href="@{'/index'}">Pet Clinic</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
@@ -15,6 +15,13 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{'/login'}">Log in</a>
+                </li>
+                <li class="nav-item">
+                    <span sec:authorize="isAuthenticated()">
+                | Logged user: <span sec:authentication="name"></span> |
+                Roles: <span sec:authentication="principal.authorities"></span> |
+                <a th:href="@{/logout}">Sign Out</a>
+            </span>
                 </li>
             </ul>
         </div>

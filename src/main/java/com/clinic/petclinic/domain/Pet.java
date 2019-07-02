@@ -1,12 +1,11 @@
 package com.clinic.petclinic.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 @Entity
+@Table(name="Pet")
 public class Pet {
 
     @Id
@@ -17,7 +16,15 @@ public class Pet {
     private String name;
 
     @NotBlank(message = "Species is mandatory")
-    private String species;
+    @OneToOne
+    private Species species;
+
+    @NotBlank(message = "Birth_date is mandatory")
+    @Column(name = "birth_date")
+    private Date birthDate;
+
+    @OneToOne
+    private Owner owner;
 
     public long getId() {
         return id;
@@ -35,11 +42,27 @@ public class Pet {
         this.name = name;
     }
 
-    public String getSpecies() {
+    public Species getSpecies() {
         return species;
     }
 
-    public void setSpecies(String species) {
+    public void setSpecies(Species species) {
         this.species = species;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 }

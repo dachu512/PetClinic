@@ -9,24 +9,41 @@
 <body>
 
 <div th:insert="header.html :: header"></div>
-<br>
+    <br>
 <div class="container">
     <div class="row">
-        <img src="static.images/banner.jpg" alt="">
+        <img src="images\banner.jpg" alt="">
     </div>
-</div>
-<div class="container">
-<div class="row">
-    <div class="col-sm-6">
-        <div class="jumbotron">
-                <h1>What is Lorem Ipsum?</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <br><br>
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-8">
+            <h4 class="d-flex justify-content-center">Welcome to the Pet Clinic</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
     </div>
-    <div class="col-sm-6 d-flex align-items-center">
-        <div class="row">
-                <a class="btn btn-lg btn-primary" th:href="@{'/addPet'}" role="button">Add new pet</a>
-                <a class="btn btn-lg btn-primary" th:href="@{'/petList'}" role="button">Show list of pets</a>
+</div>
+<br>
+<div class="container">
+<div class="row">
+    <div class="col-sm-4">
+        <div class="jumbotron">
+            <h1>What is Lorem</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <a class="btn btn-primary" th:href="@{'/addPet'}" role="button">Add new pet</a>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="jumbotron">
+            <h1>What is Lorem</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <a class="btn btn-primary" th:href="@{'/petList'}" role="button">Show list of pets</a>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="jumbotron">
+            <h1>What is Lorem</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <a class="btn btn-primary" th:href="@{'/petList'}" role="button">Show list of pets</a>
         </div>
     </div>
 </div>
