@@ -36,9 +36,6 @@ public class MainController {
         return "listPage";
     }
 
-
-
-
     @GetMapping("/petList")
     public String goToPetList(@Valid Pet pet, BindingResult result, Model model){
         model.addAttribute("pets", petService.findAllPet());
