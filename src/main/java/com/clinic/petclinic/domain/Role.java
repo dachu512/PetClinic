@@ -3,15 +3,15 @@ package com.clinic.petclinic.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Perm")
-public class Perm {
+@Table(name="Role")
+public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "perm_type")
-    private String permType;
+    @Column(name = "role")
+    private String role;
 
 
     public long getId() {
@@ -22,11 +22,11 @@ public class Perm {
         this.id = id;
     }
 
-    public String getPermType() {
-        return permType;
+    public String getRole() {
+        return role;
     }
 
-    public void setPermType(String permType) {
-        this.permType = permType;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

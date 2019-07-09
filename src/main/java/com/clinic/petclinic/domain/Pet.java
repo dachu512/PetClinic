@@ -15,11 +15,9 @@ public class Pet {
     @NotBlank(message = "Name is mandatory")
     private String name;
 
-    @NotBlank(message = "Species is mandatory")
     @OneToOne
     private Species species;
 
-    @NotBlank(message = "Birth_date is mandatory")
     @Column(name = "birth_date")
     private Date birthDate;
 
