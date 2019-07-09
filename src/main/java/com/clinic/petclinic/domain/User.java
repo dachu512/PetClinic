@@ -1,6 +1,7 @@
 package com.clinic.petclinic.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 
 @Entity
 @Table(name="User")
@@ -12,12 +13,12 @@ public class User {
 
     private String name;
 
-    private String nickname;
+    private String username;
 
-    private char[] password;
+    private String password;
 
     @OneToOne
-    private Perm perm;
+    private Role role;
 
     public long getId() {
         return id;
@@ -35,27 +36,27 @@ public class User {
         this.name = name;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public char[] getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(char[] password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public Perm getPerm() {
-        return perm;
+    public Role getRole() {
+        return role;
     }
 
-    public void setPerm(Perm perm) {
-        this.perm = perm;
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
